@@ -83,7 +83,7 @@ datos_filtrados = dataframe[dataframe['music_genre'] == selected_music_genre]
 st.dataframe(datos_filtrados)
 
 #boton delizante
-optionals = st.expander("Optional Configurations", True)
+optionals = st.sidebar.expander("Optional Configurations", True)
 popularity_min = optionals.slider(
 "Popularidad minima",
 min_value=float(dataframe['popularity'].dropna().min()),
@@ -134,7 +134,7 @@ st.write ("Matrícula: S26004566")
 
 #mapa de mi ciudad
 map_data = pd.DataFrame(
-np.random.randn(100, 2) / [50, 50] + [18.85685, -97.10926],
+np.random.randn(100, 2) / [100, 100] + [18.85685, -97.10926],
 columns=['lat', 'lon'])
 
 st.map(map_data)
