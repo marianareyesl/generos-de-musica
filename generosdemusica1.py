@@ -22,8 +22,6 @@ if mostrar_todos:
     # Mostramos todos los datos
     st.subheader("Todos los datos")
 
-    st.dataframe(dataframe)
-
 
 # Texto que escribirá el usuario
 titulo = sidebar.text_input("Nombre de la canción:")
@@ -100,9 +98,8 @@ subset_popularity = datos_filtrados[
     (popularity_min <= datos_filtrados['popularity'])
 ]
 
-st.dataframe(subset_popularity)
+st.subheader(f"Género seleccionado: {selected_music_genre}")
 
-st.dataframe(dataframe)
 
 #grafica 1 histograma
 fig, ax = plt.subplots()
@@ -134,7 +131,7 @@ st.write ("Matrícula: S26004566")
 
 #mapa de mi ciudad
 map_data = pd.DataFrame(
-np.random.randn(100, 2) / [100, 100] + [18.85685, -97.10926],
+    [[18.85685, -97.10926]],
 columns=['lat', 'lon'])
 
 st.map(map_data)
